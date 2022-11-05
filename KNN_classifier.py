@@ -125,6 +125,5 @@ class KNNClassifier():
             if len(self.unique_classes) > 2:
                 probability.append(
                     max([np.mean(classes == class_ for class_ in self.unique_classes)])
-                    
                 )
         return probability
