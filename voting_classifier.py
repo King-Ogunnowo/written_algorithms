@@ -62,4 +62,18 @@ class Voting_Classifier:
             for i, estimator in enumerate(self.fitted_estimators):
                 y_hats[i] = estimator.predict_proba(X)[:, 1]
             return np.mean(y_hats, axis = 0)
+        
+    def predict_proba(self, X):
+        
+        proba = np.empty(
+            (
+                len(
+                    self.fitted_estimators
+                ),
+                len(X)
+            )
+        )
+        for i, estimator in enumerate(self.fitted_estimators):
+            proba[i] = estimator.predict_proba(X)
+        return np.mean(proba, axis = 0)
             
