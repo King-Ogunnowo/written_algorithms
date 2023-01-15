@@ -36,6 +36,14 @@ class LogisticRegression():
         self.learning_rate = learning_rate
         self.threshold = threshold
         
+    def _get_params(self):
+        params_dict = {
+            'epoch':self.epoch,
+            'learning_rate':self.learning_rate,
+            'threshold' : self.threshold
+        }
+        return params_dict
+        
     def _initialize_params(self, n_features):
         weight = np.ones(
             shape = n_features, 
