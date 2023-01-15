@@ -19,6 +19,12 @@ class LogisticRegression():
         3. Optimal weights generated from process in step 2 are used to compute predictions for unseen data
         4. Depending on threshold, 1 or 0 is predicted for instances in the unseen data
         
+    DEFAULT HYPERPARAMETER CONFIGURATIONS
+    The default hyperparameter configurations for this algorithm are as follows:
+        1. epoch (Number of iterations): 1000
+        2. learning_rate (Controls the gradient descent mechanism used to update model weights): 0.03
+        3. threshold (Decision threshold, instances with probability scores above this get assigned value of 1, as target value): 0.5
+        
     NOTEWORTHY FORMULAS:
         1. sigmoid function = 1 / (1 + e(-z))
             where:
@@ -32,9 +38,9 @@ class LogisticRegression():
                 Xn is feature
     """
     def __init__(self, epoch, learning_rate, threshold):
-        self.epoch = epoch
-        self.learning_rate = learning_rate
-        self.threshold = threshold
+        self.epoch = 1000
+        self.learning_rate = 0.03
+        self.threshold = 0.5
         
     def _get_params(self):
         params_dict = {
